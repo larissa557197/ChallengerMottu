@@ -7,6 +7,12 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
+	<!-- para não ocorrer vazamento de dados -->
+	<ItemGroup>
+		<Content Remove="appsettings.Development1.Development.json" />
+		<Content Remove="appsettings.Development1.json" />
+	</ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
@@ -22,4 +28,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+<ItemGroup>
+	<Folder Include="Domain\Exceptions\" />
+	<Folder Include="Migrations\" />
+</ItemGroup>
 </Project>
