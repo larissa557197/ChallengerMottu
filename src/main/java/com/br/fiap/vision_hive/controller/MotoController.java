@@ -33,12 +33,14 @@ public class MotoController {
     @Autowired
     MotoRepository repository;
 
+    // Retorna todas as motos cadastradas
     @GetMapping
     @Cacheable("motos")
     public List<Moto> index() {
         return repository.findAll();
     }
 
+    // Retorna todas as motos cadastradas com o status 200 OK
     @PostMapping
     @CacheEvict(value = "motos", allEntries = true)
     @ResponseStatus(code = HttpStatus.CREATED)
@@ -47,12 +49,14 @@ public class MotoController {
         return repository.save(moto);
     }
 
+    // Retorna uma moto cadastrada pelo id com o status 200 OK
     @GetMapping("{id}")
     public ResponseEntity<Moto> get(@PathVariable Long id) {
         log.info("Buscando moto " + id);
         return ResponseEntity.ok(getMoto(id));
     }
 
+    // Deleta uma moto cadastrada pelo id com o status 204 NO CONTENT
     @DeleteMapping("{id}")
     public ResponseEntity<Moto> delete(@PathVariable Long id) {
         log.info("Deletando moto " + id);
