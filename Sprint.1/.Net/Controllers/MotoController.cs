@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
-using VisionHive.DTO;
+using VisionHive.DTO.Request;
 using VisionHive.Infrastructure.Contexts;
 using VisionHive.Infrastructure.Persistence;
 
@@ -86,6 +86,7 @@ namespace VisionHive.Controllers
                 motoRequest.Chassi,
                 motoRequest.EstaComLote,
                 motoRequest.Categoria
+
             );
 
             _context.Entry(moto).State = EntityState.Modified;
@@ -112,3 +113,5 @@ namespace VisionHive.Controllers
         }
     }
 }
+
+//http://localhost:5216/swagger/index.html

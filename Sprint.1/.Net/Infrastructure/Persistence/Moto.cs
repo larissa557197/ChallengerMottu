@@ -12,7 +12,12 @@ namespace VisionHive.Infrastructure.Persistence
         public bool EstaComLote { get; private set; }
         public CategoriaEntrada Categoria { get; private set; }
 
-        public Moto(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria)
+
+
+        public Guid AreaId { get; private set; }
+        public Area Area { get; private set; }
+
+        public Moto(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria, Guid areaId)
         {
             ValidarDados(placa, chassi, categoria);
 
@@ -21,6 +26,7 @@ namespace VisionHive.Infrastructure.Persistence
             Chassi = chassi;
             EstaComLote = estaComLote;
             Categoria = categoria;
+            AreaId = areaId;
 
             DateCreated = DateTime.UtcNow;
             DateModified = DateTime.UtcNow;
@@ -39,20 +45,32 @@ namespace VisionHive.Infrastructure.Persistence
             }
         }
 
-        internal static Moto Create(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria)
+        internal static Moto Create(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria, Guid areaId)
         {
-            return new Moto(placa, chassi, estaComLote, categoria);
+            return new Moto(placa, chassi, estaComLote, categoria, areaId);
         }
 
-        public void AtualizarDados(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria)
+        public void AtualizarDados(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria, Guid areaId)
         {
             ValidarDados(placa, chassi, categoria);
                 Placa = placa;
                 Chassi = chassi;
                 EstaComLote = estaComLote;
                 Categoria = categoria;
+                AreaId = areaId;
+
                 DateModified = DateTime.UtcNow; 
             
+        }
+
+        internal static Moto Create(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void AtualizarDados(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria)
+        {
+            throw new NotImplementedException();
         }
     }
 }

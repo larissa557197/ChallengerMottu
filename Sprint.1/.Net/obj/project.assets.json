@@ -6973,11 +6973,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\laris\\VisionHive\\VisionHive.csproj",
+      "projectUniqueName": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
       "projectName": "VisionHive",
-      "projectPath": "C:\\Users\\laris\\VisionHive\\VisionHive.csproj",
+      "projectPath": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
       "packagesPath": "C:\\Users\\laris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\laris\\VisionHive\\obj\\",
+      "outputPath": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

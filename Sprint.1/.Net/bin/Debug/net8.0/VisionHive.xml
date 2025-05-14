@@ -4,6 +4,20 @@
         <name>VisionHive</name>
     </assembly>
     <members>
+        <member name="M:VisionHive.Controllers.AreaController.GetAreas">
+            <summary>
+            Retorna uma lista de áreas
+            </summary>
+            <remarks>
+            Exemplo de Solicitação:
+            
+                GET api/areas
+            
+            </remarks>
+            <response code = "200"> Retorna uma lista de áreas</response>
+            <response code = "500"> Erro interno do servidor</response>
+            <response code = "503"> Serviço indisponível</response>
+        </member>
         <member name="M:VisionHive.Controllers.MotosController.GetMotos">
             <summary>
             Retorna uma lista de motos

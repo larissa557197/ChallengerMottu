@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VisionHive.Domain.Enums;
 
-namespace VisionHive.DTO
+namespace VisionHive.DTO.Request
 {
     public class MotoRequest
     {

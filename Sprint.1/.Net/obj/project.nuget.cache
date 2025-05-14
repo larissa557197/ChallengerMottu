@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OTP1spTQeqU=",
+  "dgSpecHash": "+cxXIjI7/fg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\laris\\VisionHive\\VisionHive.csproj",
+  "projectFilePath": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\laris\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\laris\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
