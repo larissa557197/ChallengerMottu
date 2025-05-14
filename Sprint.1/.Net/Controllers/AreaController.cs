@@ -12,10 +12,10 @@ namespace VisionHive.Controllers
     [ApiController]
     public class AreaController: ControllerBase
     {
-        private readonly AreaContext _areaContext;
+        private readonly AreaContext _context;
         public AreaController(AreaContext context)
         {
-            _areaContext = context;
+            _context = context;
         }
 
 
@@ -37,14 +37,15 @@ namespace VisionHive.Controllers
         [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<ActionResult<IEnumerable<Area>>> GetAreas()
         {
-            return await _areaContext.Areas.ToListAsync();
+            return await _context.Areas.ToListAsync();
+            
         }
 
         // GET: api/Areas/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Area>> GetArea(Guid id)
         {
-            var area = await _areaContext.Areas.FindAsync(id);
+            var area = await _context.Areas.FindAsync(id);
 
             if (area == null)
             {
@@ -62,8 +63,8 @@ namespace VisionHive.Controllers
             {
                 return BadRequest();
             }
-            _areaContext.Areas.Add(area);
-            await _areaContext.SaveChangesAsync();
+            _context.Areas.Add(area);
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetArea", new { id = area.Id }, area);
         }
@@ -72,15 +73,22 @@ namespace VisionHive.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutArea(Guid id, AreaRequest areaRequest)
         {
-            var area = await _areaContext.Areas.FindAsync(id);
+            var area = await _context.Areas.FindAsync(id);
+            
+            if (area == null)
+            {
+                return NotFound();
+            }
             if (id != area.Id)
             {
                 return BadRequest();
             }
-            _areaContext.Entry(area).State = EntityState.Modified;
+
+            // Atualiza os dados
+            area.AtualizarDados(areaRequest.Nome);
             try
             {
-                await _areaContext.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -100,19 +108,19 @@ namespace VisionHive.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteArea(Guid id)
         {
-            var area = await _areaContext.Areas.FindAsync(id);
+            var area = await _context.Areas.FindAsync(id);
             if (area == null)
             {
                 return NotFound();
             }
-            _areaContext.Areas.Remove(area);
-            await _areaContext.SaveChangesAsync();
+            _context.Areas.Remove(area);
+            await _context.SaveChangesAsync();
             return NoContent();
         }
 
         private bool AreaExists(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Areas.Any(a => a.Id == id);
         }
     }
 }

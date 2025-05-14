@@ -13,10 +13,11 @@ namespace VisionHive.Infrastructure.Persistence
         public CategoriaEntrada Categoria { get; private set; }
 
 
-
+        // relacionamento com Area
         public Guid AreaId { get; private set; }
         public Area Area { get; private set; }
 
+        public Moto() { }
         public Moto(string placa, string chassi, bool estaComLote, CategoriaEntrada categoria, Guid areaId)
         {
             ValidarDados(placa, chassi, categoria);

@@ -45,7 +45,7 @@ namespace VisionHive.Controllers
         public async Task<ActionResult<Moto>> GetMoto(Guid id)
         {
             var moto = await _context.Motos.FindAsync(id);
-
+            
             if (moto == null)
             {
                 return NotFound();

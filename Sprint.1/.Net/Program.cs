@@ -47,6 +47,11 @@ namespace TDSPK.API
                 options.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
             });
 
+            builder.Services.AddDbContext<AreaContext>(options =>
+            {
+                options.UseOracle(builder.Configuration.GetConnectionString("Oracle"));
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

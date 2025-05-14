@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj": {}
+    "C:\\Users\\labsfiap\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj": {}
   },
   "projects": {
-    "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj": {
+    "C:\\Users\\labsfiap\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
         "projectName": "VisionHive",
-        "projectPath": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
-        "packagesPath": "C:\\Users\\laris\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\laris\\ChallengerMottu\\Sprint.1\\.Net\\obj\\",
+        "projectPath": "C:\\Users\\labsfiap\\ChallengerMottu\\Sprint.1\\.Net\\VisionHive.csproj",
+        "packagesPath": "C:\\Softwares\\Nuget",
+        "outputPath": "C:\\Users\\labsfiap\\ChallengerMottu\\Sprint.1\\.Net\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\laris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "c:\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -98,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

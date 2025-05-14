@@ -9,9 +9,8 @@ namespace VisionHive.Infrastructure.Persistence
         public string Nome { get; private set; }
 
 
-        // relacionamento com Moto
-        private readonly List<Moto> _motos = new();
-        public IReadOnlyCollection<Moto> Motos => _motos.AsReadOnly();
+        // relacionamento 1:N com Moto
+        public ICollection<Moto> Motos { get; private set; } = new List<Moto>();
 
         private Area (string nome)
         {
@@ -23,6 +22,9 @@ namespace VisionHive.Infrastructure.Persistence
             DateModified = DateTime.UtcNow;
             Status = StatusType.Ativo;
         }
+
+        protected Area() { }
+
         internal static Area Create(string nome)
         {
             return new Area(nome);
@@ -45,7 +47,7 @@ namespace VisionHive.Infrastructure.Persistence
         {
             if (moto == null)
                 throw new Exception("Moto não pode ser nula.");
-            _motos.Add(moto);
+            Motos.Add(moto);
         }
     }
 }
